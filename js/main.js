@@ -58,34 +58,5 @@ $('#shakey').click(function() {
         });
     });
 });
-//'Authorization': 'Basic QUlEYzQxOWZjZjA5NDNhY2M1NmZjOGZiZGQxZGQ2ZGRhMzU6MjhiNWRlMTk0ZGUzOTUxYTRhNDZlYmRkMTQ2NzdlMmU='
-var ssid = 'eduroam';
-$('#dropey').click(function() {
-    //getting meteors
-    $.ajax({
-        headers: {
-          'Accept': 'application/json',
-          'Authorization': 'Basic QUlEZDkxZDQ3NDk1N2RlNGUyYmNhYmZlNjJiMmMzOWRlMDA6ZTc1MDI1OTEzZjk2MjRiZjAyNWEyMTRmMjE1YWYxZTA='
-        },
-        url: 'https://api.wigle.net/api/v2/network/search?onlymine=false&freenet=false&paynet=false&ssid='+ssid,
-        dataType: 'json',
-        success: function(data) {
-          console.log(data);
-             data.results.forEach(function(result) {
 
-                     var lng = result.trilong;
-                     var lat = result.trilat;
-                     L.marker([lat, lng]).addTo(mymap);
-                    //  var circle = L.circle([lat, lng], 10, {
-                    //      color: 'blue',
-                    //      opacity: 0,
-                    //      fillColor: 'blue',
-                    //      fillOpacity: 0.5
-                    //  });
-                    //  //and add it to the map
-                    //  circle.addTo(mymap);
 
-             });
-        }
-    });
-});
